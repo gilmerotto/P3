@@ -16,11 +16,17 @@
     .resto_carte{
     width:45%;
     }
+    
     footer ul{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    
+    margin-right: 30px;
+    }
+    .menu_global{
+        display:flex;
+        flex-flow: row wrap;
+        justify-content: space-around; 
     }
 }
