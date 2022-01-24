@@ -29,4 +29,11 @@
         flex-flow: row wrap;
         justify-content: space-around; 
     }
+	.intitulé {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+	.taille{
+	width:40%;}
 }
