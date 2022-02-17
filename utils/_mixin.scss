@@ -1,0 +1,15 @@
+@mixin ombre{
+    box-shadow: 3px 3px 10px rgba(7, 7, 7, 0.15);
+}
+@mixin ombreplus {
+    box-shadow: 3px 8px 10px rgba(7, 7, 7, 0.25);
+}
+
+
+.resto_carte{
+    @include ombre 
+        
+    }
+.resto_carte:hover{
+    @include ombreplus
+}

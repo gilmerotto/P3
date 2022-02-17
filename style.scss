@@ -1,0 +1,295 @@
+
+@import "utils/_variable.scss";
+@import "utils/_mixin.scss";
+
+
+#restaurants{
+    background-color:$colour-fond1 ;
+}
+.resa{
+    background-color:$colour-fond1 ;
+}
+
+.resto_carte{
+    @include ombre;
+}
+*{
+    text-decoration: none;
+    box-sizing: border-box;
+    }
+    
+    body{
+        font-family: "Roboto", sans-serif;
+        /*font-weight: normal;*/
+        margin:auto;
+    }
+    .entetelogo{
+        text-align: center;
+        padding: 20px;
+    }
+    .ville{
+        display:flex;
+        justify-content:center;
+        align-items: center;
+        background-color: #eaeaea;
+        font-weight: bold;
+    }
+    p{
+        padding-left: 15px;
+        margin:14px 0px;
+    }
+    
+    .resa{
+        display:block;
+        text-align: center;
+        padding-bottom: 65px;
+    }
+    .resa h1{
+        padding: 50px 50px 0px 50px;
+        font-weight:bolder;
+        font-size:24px;
+        margin:0;
+    }
+    .decouvrez{
+        padding: 0 40px 35px 40px;
+        color: grey;
+    }
+    /*bouton réservation*/
+    .resa_txt_bouton{
+        background-image: linear-gradient(0deg, #9356DC, #FF79DA);
+        border-radius: 50px;
+        color: #fff;
+        font-weight: bold;
+        text-align: center;
+        padding: 15px;
+        cursor: pointer;
+        box-shadow: 3px 3px 10px rgba(7, 7, 7, 0.15);
+        transition: all 0.5s;
+       }
+       .resa_txt_bouton:hover{
+        transform: scale(1.04);  
+        background-image: linear-gradient(0deg, #f8dbf0,  #FF79DA);
+        box-shadow: 3px 8px 10px rgba(7, 7, 7, 0.25);
+       }
+    /*fonctionnement*/
+    .fonctionnement{
+        margin: 20px 20px 40px 20px;
+    }
+    .fonctionnement_bouton{
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: center;
+        font-weight: bolder;
+        background-color: #f6f6f6;
+        border-radius: 15px;
+        box-shadow: 3px 3px 10px rgba(7, 7, 7, 0.15);
+        margin: 20px 0 20px 20px;
+        padding: 28px 0;
+        cursor: pointer;
+        position: relative;
+        transition: all 0.5s;
+    }
+    .fonctionnement_bouton:hover{
+        transform: scale(1.02);
+        background-color:#f8e9f4;
+        box-shadow: 3px 8px 10px rgba(7, 7, 7, 0.25);
+    }
+    .fonctionnement_numero{
+        border-radius: 50%;
+        left: -18px;
+        padding: 8px 12px;
+        font-size: 15px;
+        background-color: #9356DC;
+        color: #fff;
+        position: absolute;
+    }
+    .fonctionnement_logo{
+        padding-left: 40px;
+        padding-right: 20px;
+        color: grey;
+    }
+    /*restaurants*/
+    #restaurants{
+        /*background-color: #f2f2f2;*/
+        display: flex;
+        flex-direction: column;
+    }
+    .resto_container{
+        padding: 20px;
+    }
+    .resto_carte{
+         border-radius: 15px;
+         width: 99%;
+         height: 250px;
+         margin-bottom: 20px;
+         overflow: hidden;
+         cursor: pointer;
+         position: relative;
+        
+         /*box-shadow: 3px 3px 10px rgba(7, 7, 7, 0.15);*/
+         transition: transform 0.5s;
+     }  
+     
+     
+        transform: scale(1.02);
+        /*box-shadow: 3px 8px 10px rgba(7, 7, 7, 0.25);*/
+     }
+    .resto_carte img{
+        object-fit: cover;
+        width: 100%;
+        height: 70%;
+    }
+    .nouveau{
+        position: absolute;
+        top: 2px;
+        right: 12px;
+        padding: 7px 20px 7px 20px;
+        color: #008766 ;
+        background-color: #99E2D0;
+        font-weight: bolder;
+        border-radius: 2px;
+    }
+    .resto.txt{
+        width: 100%;
+        height: 30%;
+        position: relative;
+    }
+    h2{
+        margin-bottom:0;
+        font-size: 18px;
+        font-weight:bolder;
+        padding-left: 15px;
+    }
+    p.ville_resto{
+    margin-top: 5px;
+    }
+    
+    /*animation coeur*/
+    .coeur .far {  
+        cursor: pointer;
+        font-size: 1.7em;
+        color:grey;
+       position: absolute;
+       /*z-index: 1;*/
+        right: 50px;
+        bottom:25px;
+    }
+    
+    .coeur:hover .far {
+        background: linear-gradient( #9356dc, #ff79dc);
+        -webkit-background-clip: text;
+        color: transparent;
+       /*z-index: 0;*/
+    }
+    
+    .coeur .fas {
+      font-size: 1.7em;
+        background: linear-gradient( #9356dc, #ff79dc);
+        -webkit-background-clip: text;
+        color: transparent;
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        -webkit-transform-origin: bottom;
+        transform-origin: bottom;
+        cursor: pointer;  
+        position:absolute;
+        /*z-index: 2;*/
+        right: 50px; 
+        bottom:25px;
+    }
+      
+    .coeur:hover .fas {
+        -webkit-transform: scale(1);
+        /*transform: scale(1);*/
+        -webkit-transition: 600ms ease-in;
+        transition: 600ms ease-in;
+    }
+    
+    /*footer*/
+    @import "layout/footer";
+    /*
+    footer nav{
+        background-color:black;
+        display: flex;
+        flex-direction: column;
+    }
+    h3{
+        color: white;
+        font-family: "Shrikhand", cursif;
+        font-size: 1.5rem;
+        font-weight: 400;
+        margin: 10px 0 20px 0;
+    }
+    ul {
+        list-style-type: none; 
+       padding-left: 20px;
+    }
+    footer a{
+        display:flex;
+        flex-wrap:wrap;
+        align-items: center;
+    }
+    footer p{
+        color: white;
+        padding: 5px 0 5px 0;
+        margin: 0;
+    }
+    footer i{
+        color: white;
+        margin-right: 20px;
+    }*/
+    /*aniamtion loading*/
+    .main_div {
+                
+        animation: pleinecran 2s ease-in;
+        -webkit-animation: pleinecran  2s ease-in;
+        -o-animation: pleinecran  2s ease-in;
+        
+    }
+    
+    @keyframes pleinecran {
+    
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    .load{
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #9356DC;
+        height: 100vh;
+        width: 100%;
+        animation: loading 3.5s ease-in;
+        animation-fill-mode: forwards;
+      
+    }
+    .loader{
+        animation: rotation 3.5s ease-in 1;
+        -webkit-animation:  rotation 3.5s ease-in 1;
+        -o-animation: rotation 3.5s ease-in 1;
+        
+    }
+    @keyframes loading {     
+        0% { 
+                opacity: 1;
+            }
+        100%{ 
+                opacity: 0; 
+            }
+    }
+    @keyframes rotation {     
+        0% { 
+                transform: scale(1) rotate(0deg);
+                
+            }
+        100%{ 
+               transform: scale(6) rotate(360deg);
+               
+            }
+    }
