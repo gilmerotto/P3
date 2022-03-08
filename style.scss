@@ -1,18 +1,9 @@
 
 @import "utils/_variable.scss";
 @import "utils/_mixin.scss";
+@import "layout/footer.scss";
 
 
-#restaurants{
-    background-color:$colour-fond1 ;
-}
-.resa{
-    background-color:$colour-fond1 ;
-}
-
-.resto_carte{
-    @include ombre;
-}
 *{
     text-decoration: none;
     box-sizing: border-box;
@@ -20,56 +11,58 @@
     
     body{
         font-family: "Roboto", sans-serif;
-        /*font-weight: normal;*/
         margin:auto;
     }
     .entetelogo{
         text-align: center;
         padding: 20px;
     }
-    .ville{
-        display:flex;
-        justify-content:center;
-        align-items: center;
-        background-color: #eaeaea;
-        font-weight: bold;
-    }
-    p{
-        padding-left: 15px;
-        margin:14px 0px;
-    }
     
+    .city {
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: baseline;
+        background-color: $colour-fond3;
+      }
+      p{
+          font-weight: bold;
+          color:black;
+          margin-left: 15px;
+      }
     .resa{
+        background-color:$colour-fond1 ;
         display:block;
         text-align: center;
         padding-bottom: 65px;
     }
     .resa h1{
         padding: 50px 50px 0px 50px;
-        font-weight:bolder;
+        font-family: 'arial';
+        font-weight:bold;
         font-size:24px;
         margin:0;
     }
     .decouvrez{
         padding: 0 40px 35px 40px;
-        color: grey;
+        color: $colour-fond2;
     }
     /*bouton réservation*/
     .resa_txt_bouton{
-        background-image: linear-gradient(0deg, #9356DC, #FF79DA);
+        background-image: linear-gradient(0deg, $colour-bouton1, $colour-bouton2);
         border-radius: 50px;
-        color: #fff;
+        color: $colour-fond7;
         font-weight: bold;
         text-align: center;
         padding: 15px;
         cursor: pointer;
-        box-shadow: 3px 3px 10px rgba(7, 7, 7, 0.15);
-        transition: all 0.5s;
+        @include ombre;
+        transition: transform 0.5s;
        }
-       .resa_txt_bouton:hover{
+       .resa_txt_bouton:hover {
         transform: scale(1.04);  
-        background-image: linear-gradient(0deg, #f8dbf0,  #FF79DA);
-        box-shadow: 3px 8px 10px rgba(7, 7, 7, 0.25);
+        background-image: linear-gradient(0deg, $colour-bouton2, $colour-bouton1);
+        @include ombreplus;
        }
     /*fonctionnement*/
     .fonctionnement{
@@ -81,44 +74,60 @@
         justify-content: start;
         align-items: center;
         font-weight: bolder;
-        background-color: #f6f6f6;
+        background-color: $colour-fond6;
         border-radius: 15px;
-        box-shadow: 3px 3px 10px rgba(7, 7, 7, 0.15);
+        @include ombre;
         margin: 20px 0 20px 20px;
         padding: 28px 0;
         cursor: pointer;
         position: relative;
         transition: all 0.5s;
     }
-    .fonctionnement_bouton:hover{
+    .fonctionnement_bouton:hover + .fonctionnement_logo{
         transform: scale(1.02);
         background-color:#f8e9f4;
-        box-shadow: 3px 8px 10px rgba(7, 7, 7, 0.25);
+        @include ombreplus;
+        color:#f8e9f4;
     }
+
     .fonctionnement_numero{
         border-radius: 50%;
         left: -18px;
         padding: 8px 12px;
         font-size: 15px;
-        background-color: #9356DC;
+        background-color: $colour-bouton1;
         color: #fff;
         position: absolute;
     }
     .fonctionnement_logo{
         padding-left: 40px;
         padding-right: 20px;
-        color: grey;
+        color: $colour-fond2;
     }
     /*restaurants*/
     #restaurants{
-        /*background-color: #f2f2f2;*/
+        background-color:$colour-fond1 ;
         display: flex;
         flex-direction: column;
     }
     .resto_container{
         padding: 20px;
     }
+    h1{
+        font-size: 1.5em;
+        font-family: 'arial';
+        color: black;
+        font-weight: bold;
+    }
+    h2{
+        font-size: 1em;
+        font-family: 'arial';
+        color: black;
+        font-weight: bold;
+
+    }
     .resto_carte{
+        @include ombre;
          border-radius: 15px;
          width: 99%;
          height: 250px;
@@ -126,15 +135,14 @@
          overflow: hidden;
          cursor: pointer;
          position: relative;
-        
-         /*box-shadow: 3px 3px 10px rgba(7, 7, 7, 0.15);*/
          transition: transform 0.5s;
      }  
-     
-     
-        transform: scale(1.02);
-        /*box-shadow: 3px 8px 10px rgba(7, 7, 7, 0.25);*/
+     .resto_carte:hover{
+         @include ombreplus;
+         transform:scale(1.02)
      }
+     
+        
     .resto_carte img{
         object-fit: cover;
         width: 100%;
@@ -145,8 +153,8 @@
         top: 2px;
         right: 12px;
         padding: 7px 20px 7px 20px;
-        color: #008766 ;
-        background-color: #99E2D0;
+        color: $colour-fond4 ;
+        background-color: $colour-fond8;
         font-weight: bolder;
         border-radius: 2px;
     }
@@ -166,86 +174,16 @@
     }
     
     /*animation coeur*/
-    .coeur .far {  
-        cursor: pointer;
-        font-size: 1.7em;
-        color:grey;
-       position: absolute;
-       /*z-index: 1;*/
-        right: 50px;
-        bottom:25px;
-    }
-    
-    .coeur:hover .far {
-        background: linear-gradient( #9356dc, #ff79dc);
-        -webkit-background-clip: text;
-        color: transparent;
-       /*z-index: 0;*/
-    }
-    
-    .coeur .fas {
-      font-size: 1.7em;
-        background: linear-gradient( #9356dc, #ff79dc);
-        -webkit-background-clip: text;
-        color: transparent;
-        -webkit-transform: scale(0);
-        transform: scale(0);
-        -webkit-transform-origin: bottom;
-        transform-origin: bottom;
-        cursor: pointer;  
-        position:absolute;
-        /*z-index: 2;*/
-        right: 50px; 
-        bottom:25px;
-    }
-      
-    .coeur:hover .fas {
-        -webkit-transform: scale(1);
-        /*transform: scale(1);*/
-        -webkit-transition: 600ms ease-in;
-        transition: 600ms ease-in;
-    }
+    @include animationcoeur;
     
     /*footer*/
-    @import "layout/footer";
-    /*
-    footer nav{
-        background-color:black;
-        display: flex;
-        flex-direction: column;
-    }
-    h3{
-        color: white;
-        font-family: "Shrikhand", cursif;
-        font-size: 1.5rem;
-        font-weight: 400;
-        margin: 10px 0 20px 0;
-    }
-    ul {
-        list-style-type: none; 
-       padding-left: 20px;
-    }
-    footer a{
-        display:flex;
-        flex-wrap:wrap;
-        align-items: center;
-    }
-    footer p{
-        color: white;
-        padding: 5px 0 5px 0;
-        margin: 0;
-    }
-    footer i{
-        color: white;
-        margin-right: 20px;
-    }*/
-    /*aniamtion loading*/
-    .main_div {
-                
+    @include footer;
+    
+    /*animation loading*/
+    .main_div {     
         animation: pleinecran 2s ease-in;
         -webkit-animation: pleinecran  2s ease-in;
         -o-animation: pleinecran  2s ease-in;
-        
     }
     
     @keyframes pleinecran {
@@ -262,7 +200,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #9356DC;
+        background-color: $colour-bouton2;
         height: 100vh;
         width: 100%;
         animation: loading 3.5s ease-in;
