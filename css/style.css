@@ -193,7 +193,6 @@ p.ville_resto {
   font-size: 1.7em;
   color: grey;
   position: absolute;
-  /*z-index: 1;*/
   right: 50px;
   bottom: 25px;
 }
@@ -202,7 +201,6 @@ p.ville_resto {
   background: linear-gradient(#ff79DA, #9356DC);
   -webkit-background-clip: text;
   color: transparent;
-  /*z-index: 0;*/
 }
 
 .coeur .fas {
@@ -216,14 +214,12 @@ p.ville_resto {
   transform-origin: bottom;
   cursor: pointer;
   position: absolute;
-  /*z-index: 2;*/
   right: 50px;
   bottom: 25px;
 }
 
 .coeur:hover .fas {
   -webkit-transform: scale(1);
-  /*transform: scale(1);*/
   -webkit-transition: 600ms ease-in;
   transition: 600ms ease-in;
 }
